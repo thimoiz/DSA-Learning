@@ -62,7 +62,9 @@ function nonREPEAT3(array) {
     bit1 += (array[i] >> 1) & 1;
     bit2 += (array[i] >> 2) & 1;
   }
-
+  console.log("Sum0 = ", bit0);
+  console.log("Sum1 = ", bit1);
+  console.log("Sum2 = ", bit2);
   // Calculate the remainder when each sum is divided by 3
   let rem0 = bit0 % 3;
   let rem1 = bit1 % 3;

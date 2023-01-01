@@ -2,7 +2,7 @@
 // =========== Q : FIND NTH BIT ============
 // =========================================
 
-let number = 0b1110;
+let number = 0b1110; // 14
 console.log("The Number is :", number, " & The Bits are 1 1 1 0");
 
 function findBIT(number, index) {
@@ -30,8 +30,8 @@ setBIT(number, 5);
 // =========================================
 
 function clearBIT(number, index) {
-  let mask = 1 << index;
-  number = number ^ mask;
+  let mask = ~(1 << index);
+  number = number & mask;
   console.log("After Clearing Bit : ", number);
 }
 
