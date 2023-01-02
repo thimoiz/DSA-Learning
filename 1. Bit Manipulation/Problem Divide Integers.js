@@ -24,6 +24,7 @@ function divide(dividend, divisor) {
   while (absDivisor << shift <= absDividend) {
     shift++;
   }
+  // console.log(shift);
 
   for (let i = shift - 1; i >= 0; i--) {
     if (absDivisor << i <= absDividend) {
@@ -38,3 +39,5 @@ function divide(dividend, divisor) {
     return -quotient;
   }
 }
+
+console.log(divide(89, 8));
