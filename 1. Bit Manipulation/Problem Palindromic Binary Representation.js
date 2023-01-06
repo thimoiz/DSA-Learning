@@ -15,16 +15,16 @@ function palindromicBinaryRepresentation(n) {
     len = 1;
   while (count < n) {
     len++;
-    let elementsForThisLength = 1 << ((len - 1) >> 1);
+    let elementsForThisLength = 1 << ((len - 1) >> 1); // can be written as 2 power (length - 1) / 2
     count += elementsForThisLength;
   }
-  count -= 1 << ((len - 1) >> 1);
-  let offSet = n - count - 1;
+  count -= 1 << ((len - 1) >> 1); // can be written as 2 power (length - 1) / 2
+  let offSet = n - count - 1; // -1 is due to indexing
 
-  let ans = 1 << (len - 1);
-  ans |= offSet << (len >> 1);
+  let ans = 1 << (len - 1); // can be written as 2 power (length - 1) / 2
+  ans |= offSet << (len >> 1); // offSet << length / 2
 
-  let valForReverse = ans >> (len >> 1);
+  let valForReverse = ans >> (len >> 1); // ans >> Length / 2
   let rev = getRev(valForReverse);
 
   ans |= rev;
