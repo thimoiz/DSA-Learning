@@ -1,14 +1,17 @@
 function countSetBits2(n) {
   let ans = new Array(n + 1).fill(0);
 
-  for (let i = 0; i <= n; i++) {
-    ans[i] = ans[i >> 1] + (n & 1);
+  ans[0] = 0;
+  ans[1] = 1;
+
+  for (let i = 2; i <= n; i++) {
+    ans[i] = ans[i >> 1] + (i & 1);
     // n & 1 === n % 2 ------ n >> 1 = n / 2 (int)
   }
   return ans;
 }
 
-console.log(countSetBits2(10));
+console.log(countSetBits2(15));
 
 // Logic is same :
 // 0  : 0000
