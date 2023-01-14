@@ -21,14 +21,17 @@ function divide(dividend, divisor) {
   let absDivisor = Math.abs(divisor);
 
   let shift = 0;
-  while (absDivisor << shift <= absDividend) {
+  let temp = absDivisor << shift;
+  while (temp <= absDividend) {
     shift++;
   }
   // console.log(shift);
 
   for (let i = shift - 1; i >= 0; i--) {
-    if (absDivisor << i <= absDividend) {
-      absDividend -= absDivisor << i;
+    let temp2 = absDivisor << i;
+
+    if (temp2 <= absDividend) {
+      absDividend = absDividend - temp2;
       quotient += 1 << i;
     }
   }
