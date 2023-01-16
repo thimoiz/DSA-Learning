@@ -9,6 +9,8 @@ function swapping(n, p1, p2) {
   let bitP1 = n & mask1;
   let bitP2 = n & mask2;
 
+  // Only works when bits are opposite
+
   if (bitP1 !== bitP2) {
     n = n ^ mask1;
     n = n ^ mask2;
