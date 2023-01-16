@@ -26,7 +26,7 @@ function fibonacciMatrixExp(n) {
       resultMatrix = matrixMultiply(resultMatrix, baseMatrix);
     }
     baseMatrix = matrixMultiply(baseMatrix, baseMatrix);
-    n = ~~(n / 2);
+    n = n >> 1;
   }
   return resultMatrix[0][1];
 }
