@@ -22,9 +22,13 @@ function fibonacciMatrixExp(n) {
     [0, 1],
   ];
   while (n > 0) {
-    if ((n & 1) === 1) {
+    if ((n & 1) == 1) {
+      // Logic behind this is
+      // res = res * a
       resultMatrix = matrixMultiply(resultMatrix, baseMatrix);
     }
+    // Logic behind this is
+    // a = a * a
     baseMatrix = matrixMultiply(baseMatrix, baseMatrix);
     n = n >> 1;
   }
