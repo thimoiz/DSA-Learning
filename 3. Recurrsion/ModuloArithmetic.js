@@ -6,7 +6,7 @@ function superPower(a, b) {
 
   if (b % 2 == 1) {
     result = result * result * a; // in case of odd x^5 = x^2 * x^2 * x
-  } else if (b % 2 == 0) {
+  } else {
     result = result * result; // incase of even x^4 = x^2 * x^2
   }
 
