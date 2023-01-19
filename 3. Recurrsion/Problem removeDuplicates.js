@@ -1,13 +1,15 @@
-function removeDuplicates(string, index = 0, newStr = "") {
+function removeDuplicates(string, index = 0, map = {}, newStr = "") {
   let char = string[index];
   if (index == string.length - 1) {
-    return newStr;
+    console.log(newStr);
+    return;
   }
-  if (!newStr.includes(char)) {
+  if (!map[char]) {
     newStr += char;
-    return removeDuplicates(string, index + 1, newStr);
+    map[char] = true;
+    return removeDuplicates(string, index + 1, map, newStr);
   }
-  return removeDuplicates(string, index + 1, newStr);
+  return removeDuplicates(string, index + 1, map, newStr);
 }
 
-console.log(removeDuplicates("moizzoima"));
+removeDuplicates("moizzoima");
