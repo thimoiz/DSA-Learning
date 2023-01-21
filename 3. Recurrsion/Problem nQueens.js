@@ -3,6 +3,7 @@ const board = new Array(n).fill(0).map(() => new Array(n).fill(0));
 
 function isSafe(row, col) {
   // Check if a queen can be placed on board[row][col]
+
   // Check left side of the current row
   for (let i = 0; i < col; i++) {
     if (board[row][i]) {
@@ -27,17 +28,6 @@ function isSafe(row, col) {
   return true;
 }
 
-function solveNQueens() {
-  if (solveNQueensHelper(0)) {
-    // Print the solution
-    for (let i = 0; i < n; i++) {
-      console.log(board[i].join(" "));
-    }
-  } else {
-    console.log("Solution does not exist");
-  }
-}
-
 function solveNQueensHelper(col) {
   if (col === n) {
     return true;
@@ -49,10 +39,22 @@ function solveNQueensHelper(col) {
       if (solveNQueensHelper(col + 1)) {
         return true;
       }
+      // Backtrack if condition is false
       board[i][col] = 0;
     }
   }
   return false;
+}
+
+function solveNQueens() {
+  if (solveNQueensHelper(0)) {
+    // Print the solution
+    for (let i = 0; i < n; i++) {
+      console.log(board[i].join(" "));
+    }
+  } else {
+    console.log("Solution does not exist");
+  }
 }
 
 solveNQueens();
