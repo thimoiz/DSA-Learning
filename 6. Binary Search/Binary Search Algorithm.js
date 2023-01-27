@@ -30,7 +30,7 @@ function recursionBinarySearch(array, n, element, start = 0, end = n - 1) {
 
   // Base cases
   if (array[mid] == element) return mid;
-  if (start > end) return -1;
+  if (start >= end) return -1;
 
   // Recursion
   if (array[mid] < element) {
