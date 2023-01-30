@@ -1,11 +1,9 @@
 // find pair with sum zero [-4, 4] ----> output
 // Array must be sorted in this case
-// Time complexity is linear O(n Log n)
 
 let array = [10, 15, -5, 15, -10, 5];
-let array2 = [-5, -4, -3, -2, 0, 2, 4, 6, 8];
 
-function subArraySum(array, sum) {
+function subArraySum(array) {
   array.sort((a, b) => a - b);
   let left = 0;
   let right = array.length - 1;
@@ -24,4 +22,4 @@ function subArraySum(array, sum) {
   return [array[left], array[right]];
 }
 
-console.log(subArraySum(array, 5));
+console.log(subArraySum(array));

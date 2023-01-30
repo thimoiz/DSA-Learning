@@ -2,9 +2,10 @@
 // =============== Kadane's Algorithm ==============
 // =================================================
 
-// Finds the largest sum of a subArray
-let array = [1, -2, 5, 6, -3, 5];
+let array1 = [1, -2, 5, 6, -3, 5];
+let array2 = [-526, -25];
 
+// ============ Finds the largest sum of a subArray =============
 function largestSum(array) {
   let maxSum = 0,
     tSum = 0;
@@ -19,5 +20,24 @@ function largestSum(array) {
   }
   return maxSum;
 }
+console.log(largestSum(array1));
 
-console.log(largestSum(array));
+// ============= For Negative numbers and better Approach ============
+function negativeNum(A) {
+  let tSum = A[0],
+    maxSum = A[0];
+
+  for (let i = 1; i < A.length; i++) {
+    tSum = tSum + A[i];
+
+    if (tSum < A[i]) {
+      tSum = A[i];
+    }
+
+    maxSum = Math.max(tSum, maxSum);
+  }
+
+  return maxSum;
+}
+console.log(negativeNum(array1));
+console.log(negativeNum(array2));
