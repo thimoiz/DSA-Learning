@@ -28,7 +28,7 @@ function negativeNum(A) {
     maxSum = A[0];
 
   for (let i = 1; i < A.length; i++) {
-    tSum = tSum + A[i];
+    tSum += A[i];
 
     if (tSum < A[i]) {
       tSum = A[i];

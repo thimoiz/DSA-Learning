@@ -75,7 +75,9 @@ function solveSudokuHelper(grid) {
 
 function solveSudoku() {
   if (solveSudokuHelper(grid)) {
-    console.log(grid);
+    for (let i = 0; i < 9; i++) {
+      console.log(grid[i].join(" "));
+    }
   } else {
     console.log("No solution exists");
   }
