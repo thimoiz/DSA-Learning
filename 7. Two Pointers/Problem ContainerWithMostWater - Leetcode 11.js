@@ -36,7 +36,7 @@ function maxArea(height) {
     max = Math.max(tArea, max);
 
     // Condition for moving pointer
-    if (start < end) start++;
+    if (height[start] < height[end]) start++;
     else end--;
   }
 
